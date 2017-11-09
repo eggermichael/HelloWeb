@@ -12,11 +12,15 @@ package net.michaelegger.webapps.bmi_calculator;
 public class BMIHandler {
 
     /**
-     * @return the bmi (body mass index)
+     * @return the bmi (body mass index) = weight [kg] / height^2 [kg^2]
      */
     public Double getBmi() {
-        bmi = weight / (height * height);
-        return bmi;
+        if (height > 0.0) {
+            bmi = weight / (height * height);
+            return bmi;
+        }
+        else
+            return null;
     }
 
     /**
